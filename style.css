@@ -1,0 +1,27 @@
+
+.card {
+    border: 3px solid;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-1 {
+    display: flex;
+    height: 30rem;
+}
+
+.header {
+    height: 3rem;
+}
+
+.nav {
+    width: 20%;
+}
+
+.section {
+    width: 80%;
+}
