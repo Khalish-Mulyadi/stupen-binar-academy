@@ -4,6 +4,10 @@
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+.hero-section, .nav-bar {
+    background-color:  #F1F3FF;
+}
+
 .accordion-item {
     margin-bottom: 1rem;
 }
