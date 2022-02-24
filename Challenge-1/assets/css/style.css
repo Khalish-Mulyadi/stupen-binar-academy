@@ -8,6 +8,75 @@
     background-color:  #F1F3FF;
 }
 
+.service-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    padding: 0 10px 0 0;
+    color: #0D28A6;
+}
+
+.carousel {
+    height: 15rem;
+}
+
+.carousel-control-prev{
+    position: absolute;
+    top: auto;
+    left: 40%;
+    background: #5CB85F;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.carousel-control-next {
+    position: absolute;
+    top: auto;
+    right: 40%;
+    background: #5CB85F;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+    color: black;
+}
+
+.cta-banner {
+    background-color: #0D28A6;
+    width: 75%;
+    border-radius: 13px;
+}
+
+.card-testi {
+    background-color: #F1F3FF;
+    border-radius: 1rem;
+    border: 0;
+}
+
+.fa-star {
+    color:#9b9b9b;
+}
+
+.checked {
+    color: #F9CC00;
+}
+
+.profile-pict {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .accordion-item {
     margin-bottom: 1rem;
 }
@@ -19,6 +88,7 @@
 .fa-stack {
     padding-top: 0.7em;
     padding-left: 0.5em;
+    margin-left: 0.7em;
 }
 
 .thumbs-up-bg {
