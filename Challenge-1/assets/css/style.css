@@ -4,8 +4,44 @@
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-.hero-section, .nav-bar {
+.hero-section, .navbar {
     background-color:  #F1F3FF;
+}
+
+.icon-complete {
+    content:url('../img/icon_complete.png');
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+.icon-price {
+    content:url('../img/icon_price.png');
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+.icon-24hrs {
+    content:url('../img/icon_24hrs.png');
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+.icon-professional {
+    content:url('../img/icon_professional.png');
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    margin-top: 20px;
+
 }
 
 .service-list {
@@ -105,4 +141,84 @@
 
 .award-bg {
     color: green;
+}
+
+.mySwiper {
+    height: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    font-size: 14px;
+    min-height: 30vh;
+    position: relative;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.testi-control-prev {
+    position: absolute;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.testi-control-next {
+    position: absolute;
+    top: 100%;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.facebook-icon {
+    content: url('../img/icon_facebook.png');
+    width: 32px;
+    height: 32px;
+}
+
+.instagram-icon {
+    content: url('../img/icon_instagram.png');
+    width: 32px;
+    height: 32px;
+}
+
+.twitter-icon {
+    content: url('../img/icon_twitter.png');
+    width: 32px;
+    height: 32px;
+}
+
+.email-icon {
+    content: url('../img/icon_mail.png');
+    width: 32px;
+    height: 32px;
+}
+
+.twitch-icon {
+    content: url('../img/icon_twitch.png');
+    width: 32px;
+    height: 32px;
+}
+
+.footer-nav {
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
 }
