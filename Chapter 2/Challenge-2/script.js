@@ -143,7 +143,7 @@ function getAngkaTerbesarKedua(dataAngka) {
     return "Error: No second largest number"
 }
 
-const arrayAngka = [9,4,7,7,4,3,2,2,8,9]
+let arrayAngka1 = [9,4,5,4,3,2,2,9,11]
 
 
 
@@ -254,7 +254,7 @@ var novelTerlaris = kumpulanNovel.reduce((prev, current) =>{
 })
 
 var judulNovelTerlaris = dataPenjualanNovel.find((e) =>{
-    return e.totalTerjual === 213
+    return e.totalTerjual === novelTerlaris
 })
 
 getInfoPenjualan = (dataPenjualan) => {

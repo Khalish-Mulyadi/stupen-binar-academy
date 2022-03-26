@@ -8,8 +8,22 @@
     <title>Challenge 2 Binar Academy FE JS</title>
 </head>
 
+
 <body>
+
+    <h1 id="header1">Mochammad Khalish Mulyadi</h1>
+    <input type="color" id="txt-color">
     <script src="script.js"></script>
+    <script>
+        var textColor = document.getElementById("txt-color")
+
+        textColor.addEventListener("change", event => {
+            document.getElementById("header1").style.color = textColor.value
+        })
+
+    </script>
+
+
 </body>
 
 </html>
