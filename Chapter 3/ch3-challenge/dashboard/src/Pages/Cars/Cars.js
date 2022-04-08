@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardCars } from "../../Assets/Components/CardCars/CardCars";
 import "bootstrap";
 
 export const Cars = () => {
+  const [showAlert, setAlert] = useState(false);
+  const deleteCar = () => {
+    setAlert(true);
+  };
   return (
     <div>
+      {showAlert ? (
+        <div className="alert alert-danger text-center mx-auto" role="alert" Style={"width: 30vw"}>
+          A simple danger alert—check it out!
+        </div>
+      ) : null}
       <div className="container-fluid">
         <nav Style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
           <ol className="breadcrumb">
@@ -31,7 +40,7 @@ export const Cars = () => {
         </div>
       </div>
       <div className="container-fluid">
-        <button type="button" className="btn btn-info border border-primary text-primary active my-3 me-2">
+        <button type="button" className="btn btn-info border border-primary text-primary active my-3 me-2" onClick={deleteCar}>
           All
         </button>
         <button type="button" className="btn btn-light border border-secondary text-secondary my-3 me-2">

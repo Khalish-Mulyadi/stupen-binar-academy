@@ -5,7 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import carImage from "../../img/image 1.png";
 import "./CardCars.css";
 
-export const CardCars = () => {
+export const CardCars = (props) => {
   return (
     <div className="col">
       <div className="card card_cars h-100 rounded">

@@ -10,7 +10,7 @@ export const Dashboard = () => {
       data.push(
         <tr>
           <td>{i + 1}</td>
-          <td>User Email</td>
+          <td>User Email{i + 1}</td>
           <td>Car{i + 1}</td>
           <td>Start Rent</td>
           <td>Finish Rent</td>
