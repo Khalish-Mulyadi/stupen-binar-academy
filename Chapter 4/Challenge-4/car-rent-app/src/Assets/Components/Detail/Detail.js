@@ -9,14 +9,15 @@ export const Detail = (props) => {
   const carDetail = props.carDetail;
   return (
     <div>
-      <Grid container spacing={1}>
-        <Grid item md={8}>
+      <Grid container spacing={3}>
+        <Grid item md={8} sx={{ justifyItems: "end", display: "grid" }}>
           <Box
             sx={{
-              width: "90%",
+              width: "85%",
               backgroundColor: "#ffff",
               borderRadius: "8px",
               boxShadow: 3,
+              p: 3,
             }}
           >
             <Typography variant="h6" fontWeight="bold" gutterBottom>
@@ -74,13 +75,13 @@ export const Detail = (props) => {
               </ListItem>
             </List>
 
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{ height: 3 }}>
+            <Accordion sx={{ boxShadow: 0, marginLeft: -3 }}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{ height: 2 }}>
                 <Typography variant="h6" fontWeight="bold" gutterBottom>
                   Refund, Reschedule, Overtime
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails sx={{ marginLeft: -2 }}>
                 <List>
                   <ListItem>
                     <ListItemIcon sx={{ minWidth: "20px" }}>
@@ -111,6 +112,8 @@ export const Detail = (props) => {
               backgroundColor: "#5CB85F",
               textTransform: "none",
               m: 2,
+              display: "grid",
+              justifyItems: "end",
             }}
           >
             Lanjutkan Pembayaran
