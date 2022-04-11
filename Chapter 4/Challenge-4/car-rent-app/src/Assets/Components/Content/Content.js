@@ -11,7 +11,7 @@ export const Content = (props) => {
   console.log(props.carData);
 
   const showData = () => {
-    return props.carData.map((e, i) => {
+    return props.carData.map((e) => {
       return (
         <Grid item md={3}>
           <Card>
@@ -58,7 +58,7 @@ export const Content = (props) => {
                   width: 300,
                 }}
                 onClick={() => {
-                  props.getDetail(i, e);
+                  props.getDetail(e.id, e);
                 }}
               >
                 Pilih Mobil

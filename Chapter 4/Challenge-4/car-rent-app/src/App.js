@@ -7,6 +7,7 @@ import { TopNavbar } from "./Assets/Components/TopNavbar/TopNavbar";
 
 function App() {
   const [carData, setCarData] = useState([]);
+  const [filteredCarData, setFilteredCarData] = useState([]);
   const [showContent, setShowContent] = useState(false);
   const [showDetail, setShowDetail] = useState(false);
   const [carDetail, setCarDetail] = useState([]);
@@ -29,12 +30,13 @@ function App() {
       });
   }, []);
 
-  const cariMobil = () => {
+  const cariMobil = (filteredCarData) => {
+    setFilteredCarData(filteredCarData);
     setShowContent(!showContent);
   };
 
-  const getDetail = (carIndex, carData) => {
-    console.log(carIndex);
+  const getDetail = (carId, carData) => {
+    console.log(carId);
     console.log(carData);
     setCarDetail(carData);
     setShowDetail(!showDetail);
@@ -44,8 +46,8 @@ function App() {
   return (
     <div className="App">
       <TopNavbar />
-      <Search cariMobil={() => cariMobil(carData)} />
-      {showContent ? <Content carData={carData} getDetail={getDetail} /> : null}
+      <Search cariMobil={cariMobil} carData={carData} />
+      {showContent ? <Content carData={filteredCarData} getDetail={getDetail} /> : null}
       {showDetail ? <Detail carDetail={carDetail} /> : null}
       <Footer />
     </div>

@@ -9,14 +9,20 @@ import CarImage from "../../Images/img_car.png";
 import "./Search.css";
 
 export const Search = (props) => {
-  const [driver, setDriver] = useState("");
+  const [status, setStatus] = useState("");
   const [date, setDate] = useState(null);
   const [passanger, setPassanger] = useState(0);
   const [waktu, setWaktu] = useState("");
 
-  const handleChange = (event) => {
-    setDriver(event.target.value);
+  const handleFilter = () => {
+    const newFilter = props.carData.filter((value) => {
+      if (value.status === status) {
+        return value;
+      }
+    });
+    props.cariMobil(newFilter);
   };
+
   return (
     <div>
       <Grid container spacing={0} sx={{ backgroundColor: "#F1F3FF" }}>
@@ -50,11 +56,21 @@ export const Search = (props) => {
               <InputLabel id="demo-simple-select-label" color="success">
                 Pilih Tipe Driver
               </InputLabel>
-              <Select labelId="demo-simple-select-label" id="demo-simple-select" value={driver} label="Pilih Tipe Driver" color="success" IconComponent={KeyboardArrowDownRounded} onChange={handleChange}>
-                <MenuItem value={"Dengan Sopir"} color="success">
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={status}
+                label="Pilih Tipe Driver"
+                color="success"
+                IconComponent={KeyboardArrowDownRounded}
+                onChange={(event) => {
+                  setStatus(event.target.value);
+                }}
+              >
+                <MenuItem value={true} color="success">
                   Dengan Sopir
                 </MenuItem>
-                <MenuItem value={"Tanpa Sopir"} color="success">
+                <MenuItem value={false} color="success">
                   Tanpa Sopir (Lepas Kunci)
                 </MenuItem>
               </Select>
@@ -135,7 +151,7 @@ export const Search = (props) => {
             </FormControl>
           </Grid>
           <Grid item xs={2} sx={{ my: "auto" }}>
-            <Button variant="contained" color="success" size="large" sx={{ textTransform: "none", backgroundColor: "#5CB85F", fontWeight: "bold" }} onClick={() => props.cariMobil()}>
+            <Button variant="contained" color="success" size="large" sx={{ textTransform: "none", backgroundColor: "#5CB85F", fontWeight: "bold" }} onClick={handleFilter}>
               Cari Mobil
             </Button>
           </Grid>
