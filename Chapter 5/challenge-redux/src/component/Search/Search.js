@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { Grid, Container, Typography, Box, InputLabel, InputAdornment, MenuItem, FormControl, Button, Select, TextField } from "@mui/material";
 import { PeopleAltOutlined, QueryBuilder, KeyboardArrowDownRounded } from "@mui/icons-material";
 import DateAdapterMoment from "@mui/lab/AdapterMoment";
@@ -6,12 +7,28 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import CarImage from "../../Images/img_car.png";
 
-const Search = () => {
+import getCarData from "../../redux/actions/getCarData";
+import getCarDataFiltered from "../../redux/actions/getCarDataFiltered";
+
+const Search = (props) => {
   const [status, setStatus] = useState("");
   const [date, setDate] = useState(null);
   const [passanger, setPassanger] = useState(0);
   const [waktu, setWaktu] = useState("");
 
+  useEffect(() => {
+    props.getCarData();
+  }, []);
+  const handleFilter = () => {
+    const carDataFiltered = props.carData.filter((value) => {
+      if (value.status === status) {
+        return value;
+      } else {
+        return null;
+      }
+    });
+    props.getCarDataFiltered(carDataFiltered);
+  };
   return (
     <div>
       <Grid container spacing={0} sx={{ backgroundColor: "#F1F3FF" }}>
@@ -140,7 +157,17 @@ const Search = () => {
             </FormControl>
           </Grid>
           <Grid item xs={2} sx={{ my: "auto" }}>
-            <Button variant="contained" color="success" size="large" sx={{ textTransform: "none", backgroundColor: "#5CB85F", fontWeight: "bold" }}>
+            <Button
+              variant="contained"
+              color="success"
+              size="large"
+              sx={{
+                textTransform: "none",
+                backgroundColor: "#5CB85F",
+                fontWeight: "bold",
+              }}
+              onClick={handleFilter}
+            >
               Cari Mobil
             </Button>
           </Grid>
@@ -150,4 +177,17 @@ const Search = () => {
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => {
+  return {
+    carData: state.carReducer.cars,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCarData: () => dispatch(getCarData()),
+    getCarDataFiltered: (carDataFiltered) => dispatch(getCarDataFiltered(carDataFiltered)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

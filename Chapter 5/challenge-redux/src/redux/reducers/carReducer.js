@@ -1,10 +1,12 @@
-import { FETCH_CAR, GET_CAR_DETAIL } from "../actions/types";
+import { FETCH_CAR, GET_CAR_DETAIL, CAR_DATA_FILTERED } from "../actions/types";
 
 // inisialisasi nilai awal dari state
 const initialState = {
   cars: [],
+  carsFiltered: [],
   carDetail: {},
-  Count: 0,
+  showContent: false,
+  showDetail: false,
 };
 
 const carReducer = (state = initialState, action) => {
@@ -16,10 +18,20 @@ const carReducer = (state = initialState, action) => {
         cars: action.payload,
       };
       break;
+    case CAR_DATA_FILTERED:
+      return {
+        ...state,
+        carsFiltered: action.carsFiltered,
+        showContent: true,
+        showDetail: false,
+      };
+      break;
     case GET_CAR_DETAIL:
       return {
         ...state,
         carDetail: action.carDetail,
+        showDetail: true,
+        showContent: false,
       };
       break;
 

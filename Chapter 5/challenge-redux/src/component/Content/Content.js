@@ -4,23 +4,18 @@ import { Container, Grid, Card, CardActions, CardContent, CardMedia, Button, Typ
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import getCarData from "../../redux/actions/getCarData";
 import getCarDetail from "../../redux/actions/getCarDetail";
 
 const Content = (props) => {
-  useEffect(() => {
-    props.getCarData();
-  }, []);
-
   return (
     <div>
       <Container>
         <Grid container spacing={3}>
-          {props.carData.map((e) => {
+          {props.carDataFiltered.map((e, i) => {
             return (
-              <Grid item md={3}>
+              <Grid item md={3} key={i}>
                 <Card>
-                  <CardMedia component="img" height="auto" width="auto" image={e.image} alt="car_image" />
+                  <CardMedia component="img" width="auto" image={e.image} sx={{ maxHeight: "20vh" }} alt="car_image" />
                   <CardContent>
                     <Typography gutterBottom variant="subtitle1" component="div">
                       {e.name} / {e.category}
@@ -64,7 +59,6 @@ const Content = (props) => {
                       }}
                       onClick={() => {
                         props.getCarDetail(e);
-                        console.log(e);
                       }}
                     >
                       Pilih Mobil
@@ -82,15 +76,14 @@ const Content = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    carData: state.carReducer.cars,
+    carDataFiltered: state.carReducer.carsFiltered,
     carDetail: state.carReducer.carDetail,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCarData: () => dispatch(getCarData()),
-    getCarDetail: () => dispatch(getCarDetail()),
+    getCarDetail: (carDetail) => dispatch(getCarDetail(carDetail)),
   };
 };
 

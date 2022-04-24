@@ -5,7 +5,9 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-export const Detail = (props) => {
+import { connect } from "react-redux";
+
+const Detail = (props) => {
   const carDetail = props.carDetail;
   return (
     <div>
@@ -178,3 +180,11 @@ export const Detail = (props) => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    carDetail: state.carReducer.carDetail,
+  };
+};
+
+export default connect(mapStateToProps)(Detail);

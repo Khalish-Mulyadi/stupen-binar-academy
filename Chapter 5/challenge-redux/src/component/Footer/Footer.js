@@ -2,7 +2,7 @@ import { Grid, Typography, Container, Box, Link } from "@mui/material";
 import React from "react";
 import "./Footer.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div>
       <Container maxWidth="xl">
@@ -46,3 +46,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;

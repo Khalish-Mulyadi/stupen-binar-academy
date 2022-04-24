@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 const pages = ["Our Services", "Why Us", "Testimonials", "FAQ"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-export const TopNavbar = () => {
+const TopNavbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -122,3 +122,5 @@ export const TopNavbar = () => {
     </AppBar>
   );
 };
+
+export default TopNavbar
