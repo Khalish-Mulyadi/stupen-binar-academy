@@ -4,12 +4,14 @@ import Layout from "./Layout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Homepage from "../pages/Homepage/Homepage";
 import Login from "../pages/Login/Login";
+import Regist from "../pages/Regist/Regist";
 import UserRedirect from "./UserRedirect";
 
 const RouterDefault = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Regist />} />
         <Route path="login" element={<Login />} />
 
         {/* protected routes */}

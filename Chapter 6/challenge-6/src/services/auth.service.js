@@ -38,6 +38,24 @@ const loginAdmin = (email, password) => {
   });
 };
 
+const registAdmin = (email, password) => {
+  var data = JSON.stringify({ email, password, role: "admin" });
+  var config = {
+    method: "post",
+    url: "https://rent-car-appx.herokuapp.com/admin/auth/register",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: data,
+  };
+  return axios(config).then((response) => {
+    if (response.data) {
+      console.log(response.data);
+      return response.data;
+    }
+  });
+};
+
 const logout = () => {
   localStorage.removeItem("user");
 };
@@ -47,6 +65,7 @@ const getCurrentUser = () => {
 };
 
 const authService = {
+  registAdmin,
   loginGoogle,
   loginAdmin,
   logout,
