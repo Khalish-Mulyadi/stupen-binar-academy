@@ -1,0 +1,34 @@
+.facebook-icon {
+  content: url("../../img/icon_facebook.png");
+  width: 32px;
+  height: 32px;
+  margin-right: 7px;
+}
+
+.instagram-icon {
+  content: url("../../img/icon_instagram.png");
+  width: 32px;
+  height: 32px;
+  margin: 0 7px;
+}
+
+.twitter-icon {
+  content: url("../../img/icon_twitter.png");
+  width: 32px;
+  height: 32px;
+  margin: 0 7px;
+}
+
+.email-icon {
+  content: url("../../img/icon_mail.png");
+  width: 32px;
+  height: 32px;
+  margin: 0 7px;
+}
+
+.twitch-icon {
+  content: url("../../img/icon_twitch.png");
+  width: 32px;
+  height: 32px;
+  margin: 0 7px;
+}

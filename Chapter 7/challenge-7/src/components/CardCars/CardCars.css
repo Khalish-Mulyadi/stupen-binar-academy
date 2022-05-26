@@ -1,0 +1,7 @@
+.button_edit,
+.button_delete {
+  width: 8rem;
+}
+.card_image {
+  max-height: 250px;
+}

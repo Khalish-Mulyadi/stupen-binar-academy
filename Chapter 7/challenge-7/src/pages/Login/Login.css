@@ -1,0 +1,40 @@
+.login_page {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Helvetica;
+  max-height: 100vh;
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: 34px;
+  background: #cfd4ed;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button_submit {
+  background: #0d28a6 !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+.google_login {
+  background-color: aquamarine;
+}
