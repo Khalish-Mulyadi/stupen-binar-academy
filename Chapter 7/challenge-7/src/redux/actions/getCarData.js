@@ -4,7 +4,7 @@ var axios = require("axios");
 
 var config = {
   method: "get",
-  url: `${process.env.REACT_APP_BINAR_APPX}admin/car`,
+  url: `${process.env.REACT_APP_BINAR_API}/admin/car`,
   // url: "https://jsonplaceholder.typicode.com/posts",
   headers: {},
 };

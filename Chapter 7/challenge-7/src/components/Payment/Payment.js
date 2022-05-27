@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Grid, Typography, Box, Step, Stepper, StepButton, Button, List, ListItem, ListItemIcon, ListItemText, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
+import { Grid, Typography, Box, Step, Stepper, StepButton, Button, List, ListItem, ListItemIcon, ListItemText, ListItemButton, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
@@ -16,6 +16,11 @@ const Payment = (props) => {
   const steps = ["Pilih Metode", "Bayar", "Tiket"];
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState({});
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
 
   const totalSteps = () => {
     return steps.length;
@@ -81,7 +86,9 @@ const Payment = (props) => {
             <Button>
               <ArrowBackRoundedIcon sx={{ color: "#000" }} />
             </Button>
-            <Typography variant="h6">Pembayaran</Typography>
+            <Typography variant="h6" fontWeight="bold">
+              Pembayaran
+            </Typography>
           </Box>
           <Box sx={{ width: "35%" }}>
             <Stepper nonLinear activeStep={activeStep}>
@@ -161,6 +168,59 @@ const Payment = (props) => {
                 Pilih Bank Transfer
               </Typography>
               <Typography variant="subtitle1">Kamu bisa membayar dengan transfer melalui ATM, Internet Banking atau Mobile Banking</Typography>
+              <List>
+                <ListItemButton selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
+                  <ListItemIcon sx={{ width: "100px" }}>
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        textTransform: "none",
+                        color: "#000",
+                        borderColor: "#D0D0D0",
+                        width: "70px",
+                      }}
+                    >
+                      BCA
+                    </Button>
+                  </ListItemIcon>
+                  <ListItemText primary="BCA Transfer" />
+                </ListItemButton>
+                <Divider />
+                <ListItemButton selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
+                  <ListItemIcon sx={{ width: "100px" }}>
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        textTransform: "none",
+                        color: "#000",
+                        borderColor: "#D0D0D0",
+                        width: "70px",
+                      }}
+                    >
+                      BNI
+                    </Button>
+                  </ListItemIcon>
+                  <ListItemText primary="BNI Transfer" />
+                </ListItemButton>
+                <Divider />
+                <ListItemButton selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                  <ListItemIcon sx={{ width: "100px" }}>
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        textTransform: "none",
+                        color: "#000",
+                        borderColor: "#D0D0D0",
+                        width: "70px",
+                      }}
+                    >
+                      Mandiri
+                    </Button>
+                  </ListItemIcon>
+                  <ListItemText primary="Mandiri Transfer" />
+                </ListItemButton>
+                <Divider />
+              </List>
             </Box>
           </Grid>
 
@@ -194,12 +254,18 @@ const Payment = (props) => {
 
               <Accordion sx={{ boxShadow: 0 }} disableSpacing={true}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                  <Typography variant="subtitle1" sx={{ width: "70%", flexShrink: 0 }}>
-                    Total
-                  </Typography>
-                  <Typography variant="subtitle1" fontWeight="bold">
-                    Rp. {props.carDetail.price}
-                  </Typography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={6}>
+                      <Typography color={"#000"} fontWeight="bold">
+                        Total
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Typography color={"#000"} fontWeight="bold" textAlign="end">
+                        Rp. {props.carDetail.price}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -265,10 +331,12 @@ const Payment = (props) => {
               <Divider />
               <Grid container spacing={1} justifyContent="space-around" sx={{ mx: 1, my: 1 }}>
                 <Grid item xs={6}>
-                  <Typography color={"#000"}>Total</Typography>
+                  <Typography color={"#000"} fontWeight="bold">
+                    Total
+                  </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography color={"#000"} textAlign="end" marginRight={3}>
+                  <Typography color={"#000"} fontWeight="bold" textAlign="end" marginRight={3}>
                     Rp. {props.carDetail.price}
                   </Typography>
                 </Grid>
@@ -282,6 +350,7 @@ const Payment = (props) => {
                     m: 2,
                     width: "100%",
                   }}
+                  onClick={() => navigate("invoice")}
                 >
                   Bayar
                 </Button>

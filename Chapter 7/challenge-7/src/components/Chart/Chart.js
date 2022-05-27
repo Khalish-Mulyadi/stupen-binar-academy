@@ -32,7 +32,7 @@ export const dataLine = {
 };
 
 const dataPie = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["Toyota", "Hyundai", "Honda", "Daihatsu", "Suzuki", "Nissan"],
   datasets: [
     {
       label: "# of Votes",
@@ -47,20 +47,20 @@ const dataPie = {
 const Chart = () => {
   return (
     <div className="charts">
-      <div className="chart">
+      {/* <div className="chart">
         <h1>Line Chart</h1>
         <Line data={dataLine} />
-      </div>
+      </div> */}
 
       <div className="chart">
-        <h1>Pie Chart</h1>
+        <h1>Mobil yang paling sering disewakan</h1>
         <Pie data={dataPie} />
       </div>
 
-      <div className="chart">
+      {/* <div className="chart">
         <h1>Bar Chart</h1>
         <Bar data={dataLine} />
-      </div>
+      </div> */}
     </div>
   );
 };

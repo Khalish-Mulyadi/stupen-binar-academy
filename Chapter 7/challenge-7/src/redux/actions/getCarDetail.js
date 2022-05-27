@@ -12,7 +12,7 @@ const getCarDetail = (carID) => {
   return (dispatch) => {
     axios({
       method: "get",
-      url: `${process.env.REACT_APP_BINAR_APPX}admin/car/${carID}`,
+      url: `${process.env.REACT_APP_BINAR_API}/admin/car/${carID}`,
       headers: {},
     })
       .then(function (response) {

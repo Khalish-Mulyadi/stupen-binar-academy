@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.hero-section,
+.navbar {
+  background-color: #f1f3ff;
+}
+
+.icon-complete {
+  content: url("../../img/icon_complete.png");
+  height: 32px;
+  width: 32px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.icon-price {
+  content: url("../../img/icon_price.png");
+  height: 32px;
+  width: 32px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.icon-24hrs {
+  content: url("../../img/icon_24hrs.png");
+  height: 32px;
+  width: 32px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.icon-professional {
+  content: url("../../img/icon_professional.png");
+  height: 32px;
+  width: 32px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-list li {
+  margin: 16px 0;
+}
+
+.service-list li span img {
+  padding: 0 16px 3px 0;
+}
+
+.carousel {
+  height: 15rem;
+}
+
+.carousel-control-prev {
+  position: absolute;
+  top: auto;
+  left: 40%;
+  background: #5cb85f;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.carousel-control-next {
+  position: absolute;
+  top: auto;
+  right: 40%;
+  background: #5cb85f;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+  color: black;
+}
+
+.cta-banner {
+  background-color: #0d28a6;
+  width: 75%;
+  border-radius: 13px;
+}
+
+.card-testi {
+  background-color: #f1f3ff;
+  border-radius: 1rem;
+  border: 0;
+}
+
+.fa-star {
+  color: #9b9b9b;
+}
+
+.checked {
+  color: #f9cc00;
+}
+
+.profile-pict {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+.fa-thumbs-up,
+.fa-tag,
+.fa-clock,
+.fa-award {
+  color: #fff;
+}
+
+.fa-stack {
+  padding-top: 0.7em;
+  padding-left: 0.5em;
+  margin-left: 0.7em;
+}
+
+.thumbs-up-bg {
+  color: yellow;
+}
+
+.tag-bg {
+  color: palevioletred;
+}
+
+.clock-bg {
+  color: blue;
+}
+
+.award-bg {
+  color: green;
+}
+
+.mySwiper {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 14px;
+  min-height: 30vh;
+  position: relative;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.testi-control {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}

@@ -24,7 +24,7 @@ const loginAdmin = (email, password) => {
   var data = JSON.stringify({ email, password });
   var config = {
     method: "post",
-    url: "https://rent-car-appx.herokuapp.com/admin/auth/login",
+    url: `${process.env.REACT_APP_BINAR_API}/admin/auth/login`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -43,7 +43,7 @@ const registAdmin = (email, password) => {
   var data = JSON.stringify({ email, password, role: "admin" });
   var config = {
     method: "post",
-    url: "https://rent-car-appx.herokuapp.com/admin/auth/register",
+    url: `${process.env.REACT_APP_BINAR_API}/admin/auth/register`,
     headers: {
       "Content-Type": "application/json",
     },

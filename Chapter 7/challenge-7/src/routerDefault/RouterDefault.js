@@ -10,6 +10,7 @@ import Content from "../components/Content/Content";
 import Detail from "../components/Detail/Detail";
 import LandingPage from "../pages/LandingPage/LandingPage";
 import Payment from "../components/Payment/Payment";
+import Invoice from "../components/Invoice/Invoice";
 
 const RouterDefault = () => {
   return (
@@ -20,6 +21,7 @@ const RouterDefault = () => {
         <Route path="cars/:carID" element={<Detail />} />
       </Route>
       <Route path="homepage/payment" element={<Payment />} />
+      <Route path="homepage/payment/invoice" element={<Invoice />} />
       <Route path="registration" element={<Regist />} />
       <Route path="admin" element={<Dashboard />}>
         <Route path="dashboard" element={<Table />} />
